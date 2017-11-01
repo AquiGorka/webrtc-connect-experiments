@@ -1,0 +1,18 @@
+{
+  "name": "webrtc-connect-experiments",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Gorka",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "start": "budo src/index.js:js/bundle.js --dir src --live -- -t babelify"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "budo": "^10.0.4"
+  }
+}
