@@ -4,7 +4,11 @@
   "main": "src/index.js",
   "author": "Gorka",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "google-url": "^0.0.4",
+    "setimmediate": "^1.0.5",
+    "simple-peer": "^8.1.1"
+  },
   "scripts": {
     "start": "budo src/index.js:js/bundle.js --dir src --live -- -t babelify"
   },

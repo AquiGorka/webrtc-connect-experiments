@@ -1,1 +1,5 @@
-console.log(1)
+if (location.hash === '#B') {
+  require('./b.js')
+} else {
+  require('./a.js')
+}
