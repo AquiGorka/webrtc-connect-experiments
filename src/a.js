@@ -1,12 +1,10 @@
-// Initiator
+// A (initiator)
 
 import Peer from 'simple-peer'
 import GoogleURL from 'google-url'
 import 'setimmediate'
-import config from '../config'
 
-const googleUrl = new GoogleURL({ key: config.google.apiKey })
-
+const googleUrl = new GoogleURL({ key: process.env.GOOGLE_APIKEY })
 const p = new Peer({ initiator:true , trickle: false })
 
 p.on('signal', data => {
@@ -15,7 +13,6 @@ p.on('signal', data => {
     document.querySelector('#a__signal').innerHTML = shortUrl
   });
 })
-
 p.on('connect', () => {
   console.log('A is connected to B')
 })
