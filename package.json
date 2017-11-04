@@ -13,7 +13,9 @@
     "start": "budo src/index.js:js/bundle.js --dir src --live -- -t babelify -t envify",
     "setup": "rm -rf dist && mkdir -p dist/js",
     "assets": "cp src/index.html dist/index.html",
-    "build": "npm run setup && npm run assets && browserify src/index.js -o dist/js/bundle.js -t babelify -t envify"
+    "build": "npm run setup && npm run assets && npm run browserify && npm run uglify",
+		"browserify": "browserify -t babelify -t envify -t uglifyify src/index.js -o dist/js/bundle.js",
+		"uglify": "uglifyjs dist/js/bundle.js -o dist/js/bundle.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -21,6 +23,8 @@
     "babelify": "^8.0.0",
     "browserify": "^14.5.0",
     "budo": "^10.0.4",
-    "envify": "^4.1.0"
+    "envify": "^4.1.0",
+    "uglify-js": "^3.1.6",
+    "uglifyify": "^4.0.4"
   }
 }
