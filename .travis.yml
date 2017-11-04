@@ -16,7 +16,6 @@ before_script:
 script:
   - npm run build
   - npm run deploy
-  - exit 0
 
 deploy:
   - provider: pages
