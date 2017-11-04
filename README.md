@@ -29,7 +29,7 @@ Let's connect `A` to `B`. There are two ways to do so:
 
 ### The audio/modem way
 
-1. `A` sets itself up to start accepting WebRTC connections. With the `signal` data in place we append it to a URL and then shorten it. And starts listening for incoming audio messages.
+1. `A` sets itself up to start accepting WebRTC connections. With the `signal` data in place we append it to a URL and then shorten it. `A` starts listening for incoming audio messages.
 2. `B` opens up the shoretened URL, parses the `signal` data, sets up its own WebRTC instance and then appends it to a shortened URL.
 3. `B` starts sending the `signal` data in an audio loop, until it receives a connection from `A`.
 4. `A` and `B` are connected.
@@ -59,11 +59,12 @@ There will be a newly created `dist` folder.
 
 Using URL shorteners helps deliver the data payload. The required services are much cheapier and can scale up more efficiently than their `signaling` counterparts. Some other way of _minifying_ the payload could provide an even better way to scale up. One thing at a time.
 
-To use this get a Google Api Key from [here](https://console.developers.google.com/apis/credentials).
+To use this get a Google Api Key from [here](https://console.developers.google.com/apis/credentials). Set an environment variable (GOOGLE_APIKEY) with it to make this repo work.
 
 ## Reference
 
 - https://www.html5rocks.com/en/tutorials/webrtc/infrastructure/
+- https://github.com/feross/simple-peer
 - https://easyrtc.com/
 - https://github.com/martme/webaudio-modem
 
