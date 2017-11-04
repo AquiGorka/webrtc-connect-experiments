@@ -5,6 +5,7 @@ import GoogleURL from 'google-url'
 import 'setimmediate'
 
 const googleUrl = new GoogleURL({ key: process.env.GOOGLE_APIKEY })
+console.log('GA: ', process.env)
 const p = new Peer({ initiator:true , trickle: false })
 
 p.on('signal', data => {

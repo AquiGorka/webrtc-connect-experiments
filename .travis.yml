@@ -15,10 +15,9 @@ before_script:
 
 script:
   - npm run build
-  - npm run deploy
 
 deploy:
   - provider: pages
     github_token: $GITHUB_TOKEN
-    local_dir: docs
+    local_dir: dist
     skip_cleanup: true
