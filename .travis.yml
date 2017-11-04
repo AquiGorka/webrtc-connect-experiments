@@ -1,3 +1,8 @@
+language: node_js
+
+node_js:
+  - "node"
+
 git:
   depth: 10
 
@@ -5,10 +10,13 @@ branches:
   only:
     - master
 
+before_script:
+  - npm install
+
 script:
   - npm run build
-    npm run deploy
-    exit 0
+  - npm run deploy
+  - exit 0
 
 deploy:
   - provider: pages
