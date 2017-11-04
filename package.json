@@ -12,9 +12,10 @@
   "scripts": {
     "env": "source .env",
     "start": "npm run env && budo src/index.js:js/bundle.js --dir src --live -- -t babelify -t envify",
-    "setup": "mkdir -p dist/js",
+    "setup": "rm -rf dist && mkdir -p dist/js",
     "assets": "cp src/index.html dist/index.html",
-    "build": "npm run setup && npm run assets && browserify src/index.js -o dist/js/bundle.js -t babelify -t envify"
+    "build": "npm run setup && npm run assets && browserify src/index.js -o dist/js/bundle.js -t babelify -t envify",
+		"deploy": "rm -rf docs && mv dist docs"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
