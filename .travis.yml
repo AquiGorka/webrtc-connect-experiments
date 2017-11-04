@@ -1,0 +1,16 @@
+git:
+  depth: 10
+
+branches:
+  only:
+    - master
+
+script:
+  - npm run build && npm run deploy
+
+deploy:
+  - provider: pages
+    edge: true
+    github_token: $GITHUB_TOKEN
+    local_dir: docs
+    skip_cleanup: true
