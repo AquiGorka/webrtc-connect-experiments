@@ -10,8 +10,7 @@
     "simple-peer": "^8.1.1"
   },
   "scripts": {
-    "env": "source .env",
-    "start": "npm run env && budo src/index.js:js/bundle.js --dir src --live -- -t babelify -t envify",
+    "start": "budo src/index.js:js/bundle.js --dir src --live -- -t babelify -t envify",
     "setup": "rm -rf dist && mkdir -p dist/js",
     "assets": "cp src/index.html dist/index.html",
     "build": "npm run setup && npm run assets && browserify src/index.js -o dist/js/bundle.js -t babelify -t envify"

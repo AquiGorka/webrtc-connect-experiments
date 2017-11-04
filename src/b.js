@@ -1,5 +1,4 @@
 // B
-
 import Peer from 'simple-peer'
 import GoogleURL from 'google-url'
 import 'setimmediate'
@@ -9,7 +8,7 @@ const p = new Peer({ trickle: false })
 const data = JSON.parse(atob(location.search.split('?d=')[1]))
 
 p.on('signal', data => {
-  googleUrl.shorten(`//${location.href}/?d=${btoa(JSON.stringify(data))}`, (err, shortUrl) => {
+  googleUrl.shorten(`${location.href}?d=${btoa(JSON.stringify(data))}`, (err, shortUrl) => {
     // remove the length of https://goo.gl/
     const id = shortUrl.substr(15)
     console.log(id)
