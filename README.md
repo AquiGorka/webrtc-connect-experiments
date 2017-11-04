@@ -34,10 +34,32 @@ Let's connect `A` to `B`. There are two ways to do so:
 3. `B` starts sending the `signal` data in an audio loop, until it receives a connection from `A`.
 4. `A` and `B` are connected.
 
+## Dev
+
+```sh
+# don't forget to source your .env file
+# source .env
+npm start
+```
+
+And then open up a browser to http://localhost:9966
+
+## Build
+
+```sh
+# don't forget to source your .env file
+# source .env
+npm run build
+```
+
+There will be a newly created `dist` folder.
+
 
 ## Notes
 
 Using URL shorteners helps deliver the data payload. The required services are much cheapier and can scale up more efficiently than their `signaling` counterparts. Some other way of _minifying_ the payload could provide an even better way to scale up. One thing at a time.
+
+To use this get a Google Api Key from [here](https://console.developers.google.com/apis/credentials).
 
 ## Reference
 
