@@ -5,11 +5,10 @@ import GoogleURL from 'google-url'
 import 'setimmediate'
 
 const googleUrl = new GoogleURL({ key: process.env.GOOGLE_APIKEY })
-console.log('GA: ', process.env)
 const p = new Peer({ initiator:true , trickle: false })
 
 p.on('signal', data => {
-  googleUrl.shorten(`//${location.host}/?d=${btoa(JSON.stringify(data))}#B`, (err, shortUrl)=> {
+  googleUrl.shorten(`//${location.href}/?d=${btoa(JSON.stringify(data))}#B`, (err, shortUrl)=> {
     console.log(shortUrl)
     document.querySelector('#a__signal').innerHTML = shortUrl
   });
